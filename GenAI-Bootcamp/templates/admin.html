@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - MakeSkilled</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/static/css/custom.css">
+    <script src="https://kit.fontawesome.com/a2c0c6c9f8.js" crossorigin="anonymous"></script>
+</head>
+<body class="bg-slate-50 text-slate-800">
+{% if mode == 'login' %}
+    <div class="min-h-screen flex items-center justify-center px-4 relative overflow-hidden">
+        <!-- Educational/Tech Themed Background -->
+        <div class="absolute inset-0 bg-gradient-to-br from-slate-800 via-blue-900 to-indigo-900"></div>
+        <div class="absolute inset-0 opacity-20">
+            <div class="absolute top-20 left-10 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl animate-pulse"></div>
+            <div class="absolute top-40 right-10 w-96 h-96 bg-indigo-500 rounded-full mix-blend-multiply filter blur-3xl animate-pulse" style="animation-delay: 2s;"></div>
+            <div class="absolute -bottom-8 left-1/2 w-96 h-96 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl animate-pulse" style="animation-delay: 4s;"></div>
+        </div>
+        
+        <!-- Floating Book and Software Tool Icons -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <!-- Books -->
+            <div class="absolute top-10 left-10 text-white/10 text-6xl animate-float" style="animation-duration: 6s;">
+                <i class="fa-solid fa-book"></i>
+            </div>
+            <div class="absolute top-32 right-20 text-white/10 text-5xl animate-float" style="animation-duration: 7s; animation-delay: 1s;">
+                <i class="fa-solid fa-book-open"></i>
+            </div>
+            <div class="absolute bottom-20 left-32 text-white/10 text-7xl animate-float" style="animation-duration: 8s; animation-delay: 2s;">
+                <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+            
+            <!-- Software/Tech Tools -->
+            <div class="absolute top-1/4 right-10 text-white/10 text-5xl animate-float" style="animation-duration: 9s; animation-delay: 0.5s;">
+                <i class="fa-brands fa-python"></i>
+            </div>
+            <div class="absolute top-1/3 left-20 text-white/10 text-6xl animate-float" style="animation-duration: 7s; animation-delay: 1.5s;">
+                <i class="fa-solid fa-laptop-code"></i>
+            </div>
+            <div class="absolute bottom-1/4 right-32 text-white/10 text-5xl animate-float" style="animation-duration: 8s; animation-delay: 2.5s;">
+                <i class="fa-brands fa-react"></i>
+            </div>
+            <div class="absolute bottom-32 left-1/4 text-white/10 text-6xl animate-float" style="animation-duration: 6s; animation-delay: 3s;">
+                <i class="fa-solid fa-database"></i>
+            </div>
+            <div class="absolute top-1/2 right-1/4 text-white/10 text-5xl animate-float" style="animation-duration: 7s; animation-delay: 1s;">
+                <i class="fa-brands fa-node-js"></i>
+            </div>
+            <div class="absolute top-2/3 left-1/3 text-white/10 text-6xl animate-float" style="animation-duration: 9s; animation-delay: 2s;">
+                <i class="fa-solid fa-brain"></i>
+            </div>
+            <div class="absolute bottom-1/3 right-1/3 text-white/10 text-5xl animate-float" style="animation-duration: 8s; animation-delay: 0.5s;">
+                <i class="fa-brands fa-git-alt"></i>
+            </div>
+            <div class="absolute top-40 left-1/2 text-white/10 text-7xl animate-float" style="animation-duration: 6s; animation-delay: 3.5s;">
+                <i class="fa-solid fa-robot"></i>
+            </div>
+            <div class="absolute bottom-40 right-1/2 text-white/10 text-5xl animate-float" style="animation-duration: 7s; animation-delay: 2.5s;">
+                <i class="fa-brands fa-docker"></i>
+            </div>
+            
+            <!-- Additional Educational Icons -->
+            <div class="absolute top-1/4 left-1/4 text-white/10 text-6xl animate-float" style="animation-duration: 8s; animation-delay: 1.5s;">
+                <i class="fa-solid fa-chalkboard-user"></i>
+            </div>
+            <div class="absolute bottom-1/4 left-1/2 text-white/10 text-5xl animate-float" style="animation-duration: 9s; animation-delay: 3s;">
+                <i class="fa-solid fa-lightbulb"></i>
+            </div>
+        </div>
+        
+        <!-- Decorative Grid Pattern -->
+        <div class="absolute inset-0 bg-grid-pattern opacity-5"></div>
+        
+        <!-- Login Form -->
+        <form action="/admin/login" method="POST" class="w-full max-w-md bg-white/95 backdrop-blur-xl border-2 border-white/20 rounded-2xl p-8 shadow-2xl relative z-10 transform hover:scale-105 transition-transform duration-300">
+            <div class="text-center mb-6">
+                <div class="w-16 h-16 mx-auto bg-gradient-to-br from-blue-600 to-purple-600 rounded-2xl flex items-center justify-center mb-4 shadow-lg">
+                    <i class="fa-solid fa-shield-halved text-white text-2xl"></i>
+                </div>
+                <h1 class="text-2xl font-bold text-slate-900">Admin Portal</h1>
+                <p class="text-sm text-slate-600 mt-2">Sign in to access the dashboard</p>
+            </div>
+            {% if error %}
+            <div class="mb-4 p-3 bg-red-50 border border-red-200 rounded-lg">
+                <p class="text-sm text-red-600 flex items-center gap-2">
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    {{ error }}
+                </p>
+            </div>
+            {% endif %}
+            <div class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-slate-700 mb-2">Username</label>
+                    <div class="relative">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <i class="fa-solid fa-user text-slate-400"></i>
+                        </div>
+                        <input class="input pl-10" name="username" placeholder="Enter username" required>
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-slate-700 mb-2">Password</label>
+                    <div class="relative">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <i class="fa-solid fa-lock text-slate-400"></i>
+                        </div>
+                        <input class="input pl-10" type="password" name="password" placeholder="Enter password" required>
+                    </div>
+                </div>
+                <button class="btn-primary w-full mt-6 py-3 text-base font-semibold shadow-lg hover:shadow-xl" type="submit">
+                    <i class="fa-solid fa-right-to-bracket mr-2"></i>
+                    Sign In
+                </button>
+            </div>
+            <div class="mt-6 text-center">
+                <a href="/" class="text-sm text-slate-600 hover:text-slate-900 transition-colors">
+                    <i class="fa-solid fa-arrow-left mr-1"></i>
+                    Back to Home
+                </a>
+            </div>
+        </form>
+    </div>
+{% else %}
+    <header class="bg-white border-b border-slate-200">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="font-extrabold">Admin Dashboard</div>
+            <form action="/admin/logout" method="POST">
+                <button class="btn-outline" type="submit">Logout</button>
+            </form>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-6 py-8">
+        <div class="grid lg:grid-cols-2 gap-6 mb-6">
+            <!-- Events Management -->
+            <section class="card">
+                <div class="flex items-center justify-between">
+                    <h2 class="card-title">Manage Upcoming Bootcamps</h2>
+                    <button id="addEventBtn" class="btn-primary"><i class="fa-solid fa-plus mr-2"></i>Add</button>
+                </div>
+                <div id="eventsList" class="mt-4 space-y-3">
+                    {% for ev in events %}
+                    <div class="up-card" data-id="{{ ev.id }}">
+                        <div>
+                            <div class="font-semibold">{{ ev.title }} <span class="text-xs text-slate-500">({{ ev.type }})</span></div>
+                            <div class="text-slate-600">{{ ev.startDate }} – {{ ev.endDate }} • {{ ev.location }}</div>
+                        </div>
+                        <div class="flex gap-2">
+                            <button class="btn-outline edit-ev">Edit</button>
+                            <button class="btn-outline delete-ev">Delete</button>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </section>
+
+            <!-- Registrations View -->
+            <section class="card">
+                <h2 class="card-title">College Registrations</h2>
+                <div class="mt-4 max-h-[520px] overflow-auto divide-y divide-slate-200">
+                    {% for r in registrations %}
+                    <details class="py-3">
+                        <summary class="cursor-pointer font-medium text-slate-900">{{ r.collegeName }} — {{ r.city }}, {{ r.state }}</summary>
+                        <div class="mt-2 text-sm text-slate-700">
+                            <div><b>HOD:</b> {{ r.hodName }}</div>
+                            <div><b>Email:</b> {{ r.email }}</div>
+                            <div><b>Phone:</b> {{ r.phone }}</div>
+                            <div><b>Created:</b> {{ r.createdAt }}</div>
+                        </div>
+                    </details>
+                    {% endfor %}
+                </div>
+            </section>
+        </div>
+
+        <!-- Feedback Section -->
+        <div class="grid lg:grid-cols-2 gap-6">
+            <!-- Student Feedback -->
+            <section class="card border-2 border-blue-100">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center text-white">
+                        <i class="fa-solid fa-user-graduate"></i>
+                    </div>
+                    <h2 class="card-title mb-0">Student Feedback ({{ student_feedback|length }})</h2>
+                </div>
+                <div class="mt-4 max-h-[520px] overflow-auto divide-y divide-slate-200">
+                    {% for fb in student_feedback %}
+                    <details class="py-3">
+                        <summary class="cursor-pointer font-medium text-slate-900 flex items-center gap-2">
+                            <span>{{ fb.name }}</span>
+                            <span class="text-yellow-500 text-sm">{{ '⭐' * fb.rating }}</span>
+                        </summary>
+                        <div class="mt-2 text-sm text-slate-700">
+                            <div><b>Email:</b> {{ fb.email }}</div>
+                            {% if fb.college %}
+                            <div><b>College:</b> {{ fb.college }}</div>
+                            {% endif %}
+                            <div><b>Rating:</b> {{ fb.rating }}/5</div>
+                            <div class="mt-2"><b>Message:</b></div>
+                            <div class="mt-1 p-2 bg-slate-50 rounded italic">"{{ fb.message }}"</div>
+                            <div class="mt-2 text-xs text-slate-500"><b>Submitted:</b> {{ fb.createdAt }}</div>
+                        </div>
+                    </details>
+                    {% else %}
+                    <p class="text-slate-500 text-sm py-3">No student feedback yet.</p>
+                    {% endfor %}
+                </div>
+            </section>
+
+            <!-- Faculty Feedback -->
+            <section class="card border-2 border-purple-100">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center text-white">
+                        <i class="fa-solid fa-chalkboard-user"></i>
+                    </div>
+                    <h2 class="card-title mb-0">Faculty Feedback ({{ faculty_feedback|length }})</h2>
+                </div>
+                <div class="mt-4 max-h-[520px] overflow-auto divide-y divide-slate-200">
+                    {% for fb in faculty_feedback %}
+                    <details class="py-3">
+                        <summary class="cursor-pointer font-medium text-slate-900 flex items-center gap-2">
+                            <span>{{ fb.name }}</span>
+                            <span class="text-yellow-500 text-sm">{{ '⭐' * fb.rating }}</span>
+                        </summary>
+                        <div class="mt-2 text-sm text-slate-700">
+                            <div><b>Email:</b> {{ fb.email }}</div>
+                            {% if fb.college %}
+                            <div><b>College:</b> {{ fb.college }}</div>
+                            {% endif %}
+                            <div><b>Rating:</b> {{ fb.rating }}/5</div>
+                            <div class="mt-2"><b>Message:</b></div>
+                            <div class="mt-1 p-2 bg-slate-50 rounded italic">"{{ fb.message }}"</div>
+                            <div class="mt-2 text-xs text-slate-500"><b>Submitted:</b> {{ fb.createdAt }}</div>
+                        </div>
+                    </details>
+                    {% else %}
+                    <p class="text-slate-500 text-sm py-3">No faculty feedback yet.</p>
+                    {% endfor %}
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Modal -->
+    <div id="eventModal" class="fixed inset-0 bg-black/50 hidden items-center justify-center p-4">
+        <div class="w-full max-w-lg bg-white rounded-xl p-6 space-y-3">
+            <div class="text-lg font-bold">Event</div>
+            <div class="grid sm:grid-cols-2 gap-3">
+                <input id="evTitle" class="input" placeholder="Title (e.g., Gen AI Bootcamp)">
+                <input id="evType" class="input" placeholder="Type (Gen AI / Other)" value="Gen AI">
+                <input id="evStart" class="input" placeholder="Start Date (YYYY-MM-DD)">
+                <input id="evEnd" class="input" placeholder="End Date (YYYY-MM-DD)">
+                <input id="evLocation" class="input sm:col-span-2" placeholder="college (City, State)">
+            </div>
+            <div class="flex justify-end gap-2 pt-2">
+                <button id="cancelModal" class="btn-outline">Cancel</button>
+                <button id="saveEvent" class="btn-primary">Save</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/js/admin.js"></script>
+{% endif %}
+</body>
+</html>
+
+

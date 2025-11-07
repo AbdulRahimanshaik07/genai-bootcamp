@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MakeSkilled Bootcamp Website</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/static/css/custom.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="bg-white text-slate-800 font-[Inter]">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-white/80 backdrop-blur border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <a href="#" class="flex items-center gap-3">
+                    <img src="/static/images/logo.png" alt="MakeSkilled" class="h-9 w-9 rounded-full shadow" onerror="this.style.display='none'">
+                    <div class="text-lg font-extrabold tracking-tight">MakeSkilled</div>
+                </a>
+                <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
+                    <a href="#home" class="nav-link">Home</a>
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#bootcamp" class="nav-link">Bootcamp</a>
+                    <a href="#collab" class="nav-link">Collaborations</a>
+                    <a href="#feedback" class="nav-link">Feedback</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+    
+                </nav>
+                <button id="mobileMenuBtn" class="md:hidden inline-flex items-center justify-center p-2 rounded-md text-slate-600 hover:text-slate-900 hover:bg-slate-100">
+                    <span class="sr-only">Open main menu</span>
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+            <div id="mobileMenu" class="md:hidden hidden pb-4">
+                <div class="flex flex-col gap-3 text-sm font-medium">
+                    <a href="#home" class="nav-link">Home</a>
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#bootcamp" class="nav-link">Bootcamp</a>
+                    <a href="#collab" class="nav-link">Collaborations</a>
+                    <a href="#feedback" class="nav-link">Feedback</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                    <a href="/admin" class="nav-link">Admin</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section id="home" class="relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-blue-50 via-indigo-50/50 to-purple-50"></div>
+        <div class="absolute inset-0 opacity-30">
+            <div class="absolute top-20 left-10 w-72 h-72 bg-blue-400 rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
+            <div class="absolute top-40 right-10 w-72 h-72 bg-purple-400 rounded-full mix-blend-multiply filter blur-xl animate-pulse" style="animation-delay: 2s;"></div>
+            <div class="absolute -bottom-8 left-1/2 w-72 h-72 bg-indigo-400 rounded-full mix-blend-multiply filter blur-xl animate-pulse" style="animation-delay: 4s;"></div>
+        </div>
+        <div class="relative max-w-7xl mx-auto px-6 py-20 sm:py-28">
+            <!-- Hero Gen AI/Agentic AI Image -->
+            <div class="absolute top-5 right-5 hidden lg:block animate-float">
+                <div class="relative w-80 h-80 rounded-3xl overflow-hidden shadow-2xl border-4 border-white/80 backdrop-blur-sm transform hover:scale-105 transition-transform duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-600/20 z-10"></div>
+                    <!-- Gen AI / Agentic AI themed image -->
+                    <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=500&h=500&fit=crop&q=80" alt="Generative AI and Agentic AI Technology" class="w-full h-full object-cover" onerror="this.parentElement.innerHTML='<div class=\'w-full h-full bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-700 flex flex-col items-center justify-center text-white p-8\'><i class=\'fa-solid fa-robot text-6xl mb-4 animate-pulse\'></i><i class=\'fa-solid fa-brain text-5xl mb-4 animate-pulse\' style=\'animation-delay: 0.5s;\'></i><div class=\'text-2xl font-bold text-center\'>GEN AI<br/>Gen AI<br/>Bootcamp</div></div>'">
+                    <!-- Decorative AI elements -->
+                    <div class="absolute top-4 left-4 w-12 h-12 bg-blue-500 rounded-full opacity-30 blur-xl"></div>
+                    <div class="absolute bottom-4 right-4 w-16 h-16 bg-purple-500 rounded-full opacity-30 blur-xl"></div>
+                    <!-- AI Icons Overlay -->
+                    <div class="absolute inset-0 z-20 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300 bg-black/40">
+                        <div class="text-white text-center">
+                            <i class="fa-solid fa-robot text-4xl mb-2"></i>
+                            <div class="text-sm font-semibold">GEN AI</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Badge overlay -->
+                <div class="absolute -bottom-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded-full text-sm font-bold shadow-lg whitespace-nowrap">
+                    <i class="fa-solid fa-robot mr-2"></i>GEN AI Powered
+                </div>
+            </div>
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-100 text-blue-700 text-sm font-semibold mb-6">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <span>Empowering Colleges with Generative AI & Agentic AI Skills</span>
+            </div>
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 mb-6">
+                Gen AI Bootcamp for Colleges
+            </h1>
+            <p class="mt-6 max-w-2xl text-lg text-slate-700 leading-relaxed">
+                Learn, Build, and Innovate with Generative AI. A comprehensive, hands-on <strong class="text-blue-700">6-day program</strong> crafted for students and faculty to master AI skills from fundamentals to advanced applications.
+            </p>
+            <div class="mt-10 flex flex-wrap gap-4">
+                <a id="proposalBtn" href="#" download class="inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-blue-600 to-indigo-600 px-6 py-3.5 text-white shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5 font-semibold">
+                    <i class="fa-solid fa-file-arrow-down"></i>
+                    Download Bootcamp Proposal (PDF)
+                </a>
+                <a href="#collab" class="inline-flex items-center gap-2 rounded-lg bg-white px-6 py-3.5 text-blue-700 border-2 border-blue-200 shadow-md hover:shadow-lg hover:border-blue-300 transition-all transform hover:-translate-y-0.5 font-semibold">
+                    <i class="fa-solid fa-handshake"></i>
+                    Register Your College
+                </a>
+            </div>
+            <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl">
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-blue-600">6</div>
+                    <div class="text-sm text-slate-600 mt-1">Days Intensive</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-purple-600">100%</div>
+                    <div class="text-sm text-slate-600 mt-1">Hands-on</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-indigo-600">24/7</div>
+                    <div class="text-sm text-slate-600 mt-1">Support</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-pink-600">∞</div>
+                    <div class="text-sm text-slate-600 mt-1">Learning</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="max-w-7xl mx-auto px-6 py-20">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-100 text-purple-700 text-xs font-semibold mb-4">
+                    <i class="fa-solid fa-lightbulb"></i>
+                    <span>Our Mission</span>
+                </div>
+                <h2 class="section-title">About MakeSkilled</h2>
+                <p class="mt-4 text-slate-700 leading-relaxed text-lg">
+                    We enable colleges to introduce industry-ready Generative AI skills to their students. Our mission is to bridge academia and industry by delivering immersive learning experiences that focus on practical tools, ethical AI, and portfolio-ready mini-projects.
+                </p>
+                <div class="mt-6 flex items-center gap-4">
+                    <div class="flex -space-x-2">
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-blue-400 to-purple-500 border-2 border-white"></div>
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-indigo-400 to-pink-500 border-2 border-white"></div>
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-purple-400 to-blue-500 border-2 border-white"></div>
+                    </div>
+                    <div>
+                        <div class="font-semibold text-slate-900">500+ Students Trained</div>
+                        <div class="text-sm text-slate-600">Across 50+ Colleges</div>
+                    </div>
+                </div>
+                <!-- Educational Image -->
+                <div class="mt-8 rounded-xl overflow-hidden shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=500&fit=crop" alt="Students Learning" class="w-full h-64 object-cover" onerror="this.style.display='none'">
+                </div>
+            </div>
+            <div class="rounded-2xl border-2 border-slate-200 bg-gradient-to-br from-white via-blue-50/50 to-indigo-50/30 p-8 shadow-xl hover:shadow-2xl transition-all">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center text-white text-xl">
+                        <i class="fa-solid fa-bullseye"></i>
+                    </div>
+                    <h3 class="font-bold text-xl text-slate-900">Our Goal</h3>
+                </div>
+                <p class="mt-3 text-slate-700 leading-relaxed">Help colleges adopt Gen AI education quickly and effectively—so learners can prototype, iterate, and present with confidence.</p>
+                <ul class="mt-6 space-y-3 text-slate-700">
+                    <li class="flex items-start gap-3">
+                        <div class="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <i class="fa-solid fa-check text-green-600 text-xs"></i>
+                        </div>
+                        <span>Hands-on labs and guided projects</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <div class="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <i class="fa-solid fa-check text-green-600 text-xs"></i>
+                        </div>
+                        <span>Real-world use cases and demos</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <div class="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <i class="fa-solid fa-check text-green-600 text-xs"></i>
+                        </div>
+                        <span>Student and faculty enablement</span>
+                    </li>
+                </ul>
+                <!-- Educational Stats -->
+                <div class="mt-8 grid grid-cols-2 gap-4">
+                    <div class="bg-white rounded-lg p-4 text-center border border-blue-100">
+                        <div class="text-2xl font-bold text-blue-600">100%</div>
+                        <div class="text-xs text-slate-600 mt-1">Practical Focus</div>
+                    </div>
+                    <div class="bg-white rounded-lg p-4 text-center border border-purple-100">
+                        <div class="text-2xl font-bold text-purple-600">6 Days</div>
+                        <div class="text-xs text-slate-600 mt-1">Intensive Training</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bootcamp Schedule -->
+    <section id="bootcamp" class="bg-gradient-to-b from-slate-50 via-blue-50/30 to-slate-50 py-20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-4">
+                <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-100 text-blue-700 text-sm font-semibold">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    Comprehensive Learning Journey
+                </span>
+            </div>
+            <h2 class="section-title text-center mb-3">6-Day Bootcamp Structure</h2>
+            <p class="text-center text-slate-600 max-w-2xl mx-auto mb-12">
+                A progressive curriculum designed to take you from fundamentals to advanced applications, with hands-on projects and real-world implementations.
+            </p>
+            
+            <!-- Visual Learning Path -->
+            <div class="mb-12 bg-white rounded-2xl border-2 border-blue-100 p-8 shadow-lg">
+                <h3 class="text-xl font-bold text-slate-900 mb-6 text-center">Your Learning Journey</h3>
+                <div class="grid grid-cols-2 md:grid-cols-6 gap-4">
+                    <div class="text-center">
+                        <div class="w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center text-white font-bold text-xl shadow-lg">1</div>
+                        <div class="mt-2 text-xs font-semibold text-slate-700">Foundation</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center text-white font-bold text-xl shadow-lg">2</div>
+                        <div class="mt-2 text-xs font-semibold text-slate-700"> Napkin AI</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-amber-500 to-amber-600 flex items-center justify-center text-white font-bold text-xl shadow-lg">3</div>
+                        <div class="mt-2 text-xs font-semibold text-slate-700">Notebook LLM</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center text-white font-bold text-xl shadow-lg">4</div>
+                        <div class="mt-2 text-xs font-semibold text-slate-700">Botpress, Gamma, and HuggingFace</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-indigo-500 to-indigo-600 flex items-center justify-center text-white font-bold text-xl shadow-lg">5</div>
+                        <div class="mt-2 text-xs font-semibold text-slate-700">Teachable Machine</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-pink-500 to-pink-600 flex items-center justify-center text-white font-bold text-xl shadow-lg">6</div>
+                        <div class="mt-2 text-xs font-semibold text-slate-700">Advanced</div>
+                    </div>
+                </div>
+                <div class="mt-6 flex items-center justify-center gap-3 text-sm text-slate-600">
+                    <i class="fa-solid fa-clock text-blue-600"></i>
+                    <span>Each day includes <strong>4-6 hours</strong> of interactive sessions</span>
+                </div>
+            </div>
+            
+            <div class="mt-10 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Day 1 -->
+                <div class="bootcamp-day-card day-1">
+                    <div class="day-image-container">
+                        <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&h=400&fit=crop" alt="AI Foundation" onerror="this.style.display='none';this.parentElement.innerHTML='<i class=\'fa-solid fa-brain day-image-placeholder\'></i>'">
+                    </div>
+                    <div class="day-badge">
+                        <i class="fa-solid fa-book-open"></i>
+                        <span>Fundamentals</span>
+                    </div>
+                    <div class="day-header">
+                        <div class="day-number">01</div>
+                        <h3 class="card-title">Foundation & Introduction</h3>
+                    </div>
+                    <ul class="mt-4 space-y-3 text-slate-700 text-sm">
+                        <li class="flex gap-3 items-start">
+                            <i class="fa-solid fa-wand-magic-sparkles text-blue-600 mt-1 flex-shrink-0"></i>
+                            <span><strong>Introduction to Gen AI:</strong> History, evolution, and current landscape</span>
+                        </li>
+                        <li class="flex gap-3 items-start">
+                            <i class="fa-solid fa-brain text-purple-600 mt-1 flex-shrink-0"></i>
+                            <span><strong>Core Concepts:</strong> Build an AI-Powered App (Nano Banana Tool)
+Students will create a simple AI-powered app using the Nano Banana tool in Google AI Studio. This activity helps students understand how to design and deploy a basic AI model into an interactive app.</span>
+                        </li>
+                        <li class="flex gap-3 items-start">
+                            <i class="fa-solid fa-toolbox text-blue-600 mt-1 flex-shrink-0"></i>
+                            <span><strong>Tools Overview:</strong>Generate Images with Prompts,Develop an AI-Powered Chatbot
+This session introduces image generation using AI. Students will learn how to generate creative and realistic images by providing short text prompts.
+</span>
+                        </li>
+                        <li class="flex gap-3 items-start">
+                            <i class="fa-solid fa-keyboard text-indigo-600 mt-1 flex-shrink-0"></i>
+                            <span><strong>Hands-on Session:</strong> First interactions with AI assistants,Analyze Images with AI
+Students will use Google AI Studio tools to analyze images — identifying objects, patterns, or attributes</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Day 2 -->
+                <div class="bootcamp-day-card day-2">
+                    <div class="day-image-container">
+                        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&h=400&fit=crop" alt="Prompt Engineering" onerror="this.style.display='none';this.parentElement.innerHTML='<i class=\'fa-solid fa-pen-ruler day-image-placeholder\'></i>'">
+                    </div>
+                    <div class="day-badge">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        <span>Google AI Studio & Napkin AI</span>
+                    </div>
+                    <div class="day-header">
+                        <div class="day-number">02</div>
+                        <h3 class="card-title">Google AI Studio & Napkin AI</h3>
+                    </div>
+                    <ul class="mt-4 space-y-3 text-slate-700 text-sm">
+                        <li class="flex gap-3 items-start">
+                            <i class="fa-solid fa-pen-ruler text-blue-600 mt-1 flex-shrink-0"></i>
+                            <span><strong>Introduction to  Napkin AI:</strong>Napkin AI and Visual Generation
+Students will get an overview of Napkin AI and learn how to create visuals using simple text prompts. They will explore how AI can turn written ideas into creative images.
+</span>
+                        </li>
+                        <li class="flex gap-3 items-start">
+                            <i class="fa-solid fa-layer-group text-purple-600 mt-1 flex-shrink-0"></i>
+                            <span><strong>Core Concepts:</strong>Transcribe Audio to Text
+Students will explore AI-based transcription tools that convert spoken language into text. This introduces how AI can process audio inputs for documentation or analysis purposes.
+</span>
+                        </li>
+                        <li class="flex gap-3 items-start">
+                            <i class="fa-solid fa-flask text-indigo-600 mt-1 flex-shrink-0"></i>
+                            <span><strong>Tools Overview:</strong>Generate Creative Visuals Using Prompts,Design Creative Posters and Concepts with AI</span>
+                        </li>
+                        <li class="flex gap-3 items-start">
+                            <i class="fa-solid fa-chart-line text-blue-600 mt-1 flex-shrink-0"></i>
+                            <span><strong>Optimization:</strong> Iterative refinement and best practices</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Day 3 -->
+                <div class="bootcamp-day-card day-3">
+                    <div class="day-image-container">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop" alt="AI Applications" onerror="this.style.display='none';this.parentElement.innerHTML='<i class=\'fa-solid fa-lightbulb day-image-placeholder\'></i>'">
+                    </div>
+                    <div class="day-badge">
+                        <i class="fa-solid fa-rocket"></i>
+                        <span>Notebook LLM</span>
+                    </div>
+                    <div class="day-header">
+                        <div class="day-number">03</div>
+                        <h3 class="card-title">Notebook LLM</h3>
+                    </div>
+                    <ul class="mt-4 space-y-3 text-slate-700 text-sm">
+                        <li class="flex gap-3 items-start">
+                            <i class="fa-solid fa-lightbulb text-yellow-600 mt-1 flex-shrink-0"></i>
+                            <span><strong>Introduction to Notebook:</strong>Getting Started with Notebook LLM
+Students will learn the basics of using Notebook LLM — understanding the platform interface, uploading files, and exploring its key features like chat, summaries, and audio tools.
+</span>
+                        </li>
+                        <li class="flex gap-3 items-start">
+                            <i class="fa-solid fa-code text-blue-600 mt-1 flex-shrink-0"></i>
+                            <span><strong>Core Concepts:</strong>Upload and Analyze Study Material
+Students will learn how Notebook LLM processes study materials to identify important concepts and generate insights, helping them grasp how AI assists in content understanding.
+</span>
+                        </li>
+                        <li class="flex gap-3 items-start">
+                            <i class="fa-solid fa-file-lines text-green-600 mt-1 flex-shrink-0"></i>
+                            <span><strong>Content Creation:</strong> Writing, documentation, and creative tasks,Generate Audio or Podcasts from Notes
+Students will explore how Notebook LLM can convert written text into audio, learning how AI supports auditory learning and enhances accessibility.
+</span>
+                        </li>
+                        <li class="flex gap-3 items-start">
+                            <i class="fa-solid fa-magnifying-glass text-purple-600 mt-1 flex-shrink-0"></i>
+                            <span><strong>Case Studies:</strong> Real-world implementations and success stories,Visualize Concepts with Mindmaps,Ask and Learn — AI-Powered Q&A</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Day 4 -->
+                <div class="bootcamp-day-card day-4">
+                    <div class="day-image-container">
+                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&fit=crop" alt="Building Solutions" onerror="this.style.display='none';this.parentElement.innerHTML='<i class=\'fa-solid fa-laptop-code day-image-placeholder\'></i>'">
+                    </div>
+                    <div class="day-badge">
+                        <i class="fa-solid fa-hammer"></i>
+                        <span>Botpress, Gamma, and HuggingFace</span>
+                    </div>
+                    <div class="day-header">
+                        <div class="day-number">04</div>
+                        <h3 class="card-title">Botpress, Gamma, and HuggingFace</h3>
+                    </div>
+                    <ul class="mt-4 space-y-3 text-slate-700 text-sm">
+                        <li class="flex gap-3 items-start">
+                            <i class="fa-solid fa-diagram-project text-blue-600 mt-1 flex-shrink-0"></i>
+                            <span><strong>Introduction to Botpress:</strong>Students will get an overview of Botpress and understand its use in creating AI-driven conversational chatbots for various applications.</span>
+                        </li>
+                        <li class="flex gap-3 items-start">
+                            <i class="fa-solid fa-puzzle-piece text-purple-600 mt-1 flex-shrink-0"></i>
+                            <span><strong>Core Concepts:</strong>Build Your First Chatbot with Botpress,Create AI-Powered Presentations with Gamma</span>
+                        </li>
+                        <li class="flex gap-3 items-start">
+                            <i class="fa-solid fa-screwdriver-wrench text-indigo-600 mt-1 flex-shrink-0"></i>
+                            <span><strong>Development Tools:</strong> LangChain, OpenAI SDK, and workflow builders</span>
+                        </li>
+                        <li class="flex gap-3 items-start">
+                            <i class="fa-solid fa-rocket text-orange-600 mt-1 flex-shrink-0"></i>
+                            <span><strong>Hands-on Build:</strong> Start your first AI application</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Day 5 -->
+                <div class="bootcamp-day-card day-5">
+                    <div class="day-image-container">
+                        <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=600&h=400&fit=crop" alt="Advanced Development" onerror="this.style.display='none';this.parentElement.innerHTML='<i class=\'fa-solid fa-code-branch day-image-placeholder\'></i>'">
+                    </div>
+                    <div class="day-badge">
+                        <i class="fa-solid fa-star"></i>
+                        <span>Teachable Machine</span>
+                    </div>
+                    <div class="day-header">
+                        <div class="day-number">05</div>
+                        <h3 class="card-title">Teachable Machine, RoboFlow</h3>
+                    </div>
+                    <ul class="mt-4 space-y-3 text-slate-700 text-sm">
+                        <li class="flex gap-3 items-start">
+                            <i class="fa-solid fa-code-branch text-blue-600 mt-1 flex-shrink-0"></i>
+                            <span><strong>Introduction to Teachable Machine, RoboFlow, and MediaPipe Studio:</strong> Students will learn how to create and train a basic AI model using Teachable Machine to classify images or gestures through a simple, interactive interface</span>
+                        </li>
+                        <li class="flex gap-3 items-start">
+                            <i class="fa-solid fa-shield-halved text-green-600 mt-1 flex-shrink-0"></i>
+                            <span><strong>Core Concepts:</strong> Build a Basic Image Detection Project using RoboFlow,Students will understand how to use RoboFlow to implement an image detection or object recognition project with pre-trained models.</span>
+                        </li>
+                        <li class="flex gap-3 items-start">
+                            <i class="fa-solid fa-gear text-indigo-600 mt-1 flex-shrink-0"></i>
+                            <span><strong>Development Tools:</strong> Performance tuning and cost management.AI vision-based mini project, showcasing their understanding of all three tools.</span>
+                        </li>
+                        <li class="flex gap-3 items-start">
+                            <i class="fa-solid fa-hammer text-orange-600 mt-1 flex-shrink-0"></i>
+                            <span><strong>Project Continuation:</strong> Refine and enhance your applications</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Day 6 -->
+                <div class="bootcamp-day-card day-6">
+                    <div class="day-image-container">
+                        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600&h=400&fit=crop" alt="Showcase & Certification" onerror="this.style.display='none';this.parentElement.innerHTML='<i class=\'fa-solid fa-trophy day-image-placeholder\'></i>'">
+                    </div>
+                    <div class="day-badge">
+                        <i class="fa-solid fa-trophy"></i>
+                        <span>Advanced Topics</span>
+                    </div>
+                    <div class="day-header">
+                        <div class="day-number">06</div>
+                        <h3 class="card-title">Advanced Projects & Development</h3>
+                    </div>
+                    <ul class="mt-4 space-y-3 text-slate-700 text-sm">
+                        <li class="flex gap-3 items-start">
+                            <i class="fa-solid fa-person-chalkboard text-blue-600 mt-1 flex-shrink-0"></i>
+                            <span><strong>Advanced Features:</strong> Multi-agent systems and complex workflows</span>
+                        </li>
+                        <li class="flex gap-3 items-start">
+                            <i class="fa-solid fa-comments text-purple-600 mt-1 flex-shrink-0"></i>
+                            <span><strong>Ethics & Safety:</strong>Responsible AI, bias mitigation, and privacy</span>
+                        </li>
+                        <li class="flex gap-3 items-start">
+                            <i class="fa-solid fa-certificate text-yellow-600 mt-1 flex-shrink-0"></i>
+                            <span><strong>Optimization:</strong> Performance tuning and cost management</span>
+                        </li>
+                        <li class="flex gap-3 items-start">
+                            <i class="fa-solid fa-road text-indigo-600 mt-1 flex-shrink-0"></i>
+                            <span><strong>Project Continuation:</strong> Refine and enhance your applications</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Learning Outcomes -->
+            <div class="mt-16 bg-white rounded-2xl border border-slate-200 p-8 shadow-lg">
+                <h3 class="text-2xl font-bold text-slate-900 mb-6 text-center">What You'll Achieve</h3>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="outcome-item">
+                        <div class="outcome-icon">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </div>
+                        <h4 class="font-semibold text-slate-900 mt-3">Master Core Concepts</h4>
+                        <p class="text-slate-600 text-sm mt-2">Deep understanding of Gen AI principles and practical applications</p>
+                    </div>
+                    <div class="outcome-item">
+                        <div class="outcome-icon">
+                            <i class="fa-solid fa-briefcase"></i>
+                        </div>
+                        <h4 class="font-semibold text-slate-900 mt-3">Portfolio Projects</h4>
+                        <p class="text-slate-600 text-sm mt-2">Build real-world AI applications to showcase your skills</p>
+                    </div>
+                    <div class="outcome-item">
+                        <div class="outcome-icon">
+                            <i class="fa-solid fa-users"></i>
+                        </div>
+                        <h4 class="font-semibold text-slate-900 mt-3">Industry Network</h4>
+                        <p class="text-slate-600 text-sm mt-2">Connect with peers, mentors, and industry professionals</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Educational Features -->
+    <section class="max-w-7xl mx-auto px-6 py-20">
+        <div class="text-center mb-12">
+            <h2 class="section-title">Why Choose Our Bootcamp?</h2>
+            <p class="text-slate-600 mt-3 max-w-2xl mx-auto">Experience a comprehensive learning environment designed for maximum impact and practical skill development</p>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="edu-feature-card">
+                <div class="edu-feature-icon bg-gradient-to-br from-blue-500 to-blue-600">
+                    <i class="fa-solid fa-chalkboard-user"></i>
+                </div>
+                <h3 class="font-bold text-slate-900 mt-4 mb-2">Expert Instructors</h3>
+                <p class="text-sm text-slate-600">Learn from industry professionals with real-world AI experience</p>
+            </div>
+            <div class="edu-feature-card">
+                <div class="edu-feature-icon bg-gradient-to-br from-purple-500 to-purple-600">
+                    <i class="fa-solid fa-laptop-code"></i>
+                </div>
+                <h3 class="font-bold text-slate-900 mt-4 mb-2">Hands-on Projects</h3>
+                <p class="text-sm text-slate-600">Build real AI applications you can showcase in your portfolio</p>
+            </div>
+            <div class="edu-feature-card">
+                <div class="edu-feature-icon bg-gradient-to-br from-green-500 to-green-600">
+                    <i class="fa-solid fa-certificate"></i>
+                </div>
+                <h3 class="font-bold text-slate-900 mt-4 mb-2">Certification</h3>
+                <p class="text-sm text-slate-600">Receive industry-recognized certificates upon completion</p>
+            </div>
+            <div class="edu-feature-card">
+                <div class="edu-feature-icon bg-gradient-to-br from-orange-500 to-orange-600">
+                    <i class="fa-solid fa-headset"></i>
+                </div>
+                <h3 class="font-bold text-slate-900 mt-4 mb-2">24/7 Support</h3>
+                <p class="text-sm text-slate-600">Get help whenever you need it with our dedicated support team</p>
+            </div>
+        </div>
+        
+        <!-- Educational Stats Banner -->
+        <div class="mt-16 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 rounded-2xl p-8 text-white shadow-2xl">
+            <div class="grid md:grid-cols-4 gap-8 text-center">
+                <div>
+                    <div class="text-4xl font-bold mb-2">500+</div>
+                    <div class="text-blue-100 text-sm">Students Trained</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold mb-2">50+</div>
+                    <div class="text-blue-100 text-sm">Partner Colleges</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold mb-2">95%</div>
+                    <div class="text-blue-100 text-sm">Satisfaction Rate</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold mb-2">100%</div>
+                    <div class="text-blue-100 text-sm">Practical Learning</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What is Gen AI -->
+    <section class="max-w-7xl mx-auto px-6 py-16">
+        <div class="grid md:grid-cols-2 gap-10 items-start">
+            <div>
+                <h2 class="section-title">What is Generative AI?</h2>
+                <p class="mt-4 text-slate-700">Generative AI uses machine learning models to produce new content—text, images, code, audio—based on patterns learned from data. It accelerates ideation, prototyping, and automation while augmenting human creativity.</p>
+            </div>
+            <div>
+                <h3 class="font-semibold text-slate-900">Applications of Gen AI</h3>
+                <div class="mt-3 grid sm:grid-cols-2 gap-3">
+                    <div class="pill"><i class="fa-solid fa-file-lines"></i> Content Creation</div>
+                    <div class="pill"><i class="fa-solid fa-code"></i> Coding Assistants</div>
+                    <div class="pill"><i class="fa-solid fa-stethoscope"></i> Healthcare</div>
+                    <div class="pill"><i class="fa-solid fa-graduation-cap"></i> Education</div>
+                    <div class="pill"><i class="fa-solid fa-compass-drafting"></i> Design</div>
+                    <div class="pill"><i class="fa-solid fa-robot"></i> Automation</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Collaborations / Registration -->
+    <section id="collab" class="bg-gradient-to-b from-white via-slate-50 to-blue-50/30 py-20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-4">
+                <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-100 text-indigo-700 text-sm font-semibold">
+                    <i class="fa-solid fa-handshake"></i>
+                    Join Our Network
+                </span>
+            </div>
+            <h2 class="section-title text-center mb-2">Our Partner Colleges</h2>
+            <p class="text-center text-slate-600 max-w-2xl mx-auto mb-12">Join leading educational institutions across India in transforming AI education</p>
+            <div class="mt-8 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 items-center">
+                <div class="partner-card"><img src="/static/images/images.jpg" alt="College 1" onerror="this.style.display='none'"><span>Malineni Lakshmaiah Women's Engineering College</span></div>
+                <div class="partner-card"><img src="/static/images/images.png" alt="College 2" onerror="this.style.display='none'"><span>KKR & KSR Institute of Technology & Sciences</span></div>
+                <div class="partner-card"><img src="/static/images/images (1).jpg" alt="College 1" onerror="this.style.display='none'"><span>Brindavan Institute of Technology</span></div>
+                <div class="partner-card"><img src="/static/images/logo-final.png" alt="College 1" onerror="this.style.display='none'"><span>SACET College of Engineering</span></div>
+            </div>
+
+            <div class="mt-14 grid lg:grid-cols-2 gap-8 items-start">
+                <div class="card border-2 border-blue-100 hover:border-blue-200 transition-all">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center text-white">
+                            <i class="fa-solid fa-building-columns"></i>
+                        </div>
+                        <h3 class="card-title mb-0">Register Your College</h3>
+                    </div>
+                    <p class="text-sm text-slate-600 mb-4">Fill out the form below and our team will get in touch with you shortly.</p>
+                    <form id="registerForm" class="space-y-4 mt-4">
+                        <div class="grid sm:grid-cols-2 gap-4">
+                            <input class="input" name="collegeName" placeholder="College Name" required>
+                            <input class="input" name="hodName" placeholder="HOD Name" required>
+                        </div>
+                        <div class="grid sm:grid-cols-2 gap-4">
+                            <input class="input" type="email" name="email" placeholder="Email" required>
+                            <input class="input" name="phone" placeholder="Phone" required>
+                        </div>
+                        <div class="grid sm:grid-cols-2 gap-4">
+                            <input class="input" name="city" placeholder="City" required>
+                            <input class="input" name="state" placeholder="State" required>
+                        </div>
+                        <button class="btn-primary w-full" type="submit">Submit Registration</button>
+                        <p id="formMsg" class="text-sm"></p>
+                    </form>
+                </div>
+
+                <div class="card border-2 border-purple-100 hover:border-purple-200 transition-all">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center text-white">
+                            <i class="fa-solid fa-calendar-check"></i>
+                        </div>
+                        <h3 class="card-title mb-0">Upcoming Gen AI Bootcamps</h3>
+                    </div>
+                    <p class="text-sm text-slate-600 mb-4">Check out our scheduled bootcamp sessions and register your college.</p>
+                    <div id="eventsContainer" class="mt-4 grid gap-4"></div>
+                    <p id="eventsEmpty" class="mt-3 text-slate-500 text-sm hidden">No upcoming events yet. Check back soon!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feedback & Testimonials -->
+    <section id="feedback" class="bg-gradient-to-b from-white via-slate-50 to-purple-50/30 py-20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-4">
+                <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-100 text-purple-700 text-sm font-semibold">
+                    <i class="fa-solid fa-comments"></i>
+                    Share Your Experience
+                </span>
+            </div>
+            <h2 class="section-title text-center mb-2">Feedback & Testimonials</h2>
+            <p class="text-center text-slate-600 max-w-2xl mx-auto mb-12">Help us improve by sharing your experience with our bootcamp program</p>
+            
+            <!-- Feedback Forms (Letter Style) -->
+            <div class="mt-8 grid lg:grid-cols-2 gap-8 mb-16">
+                <!-- Student Feedback Form -->
+                <div class="relative bg-white rounded-lg shadow-2xl overflow-hidden border-2 border-blue-200 hover:shadow-3xl transition-all">
+                    <!-- Letter Paper Effect -->
+                    <div class="absolute top-0 left-0 w-full h-8 bg-gradient-to-b from-blue-50 to-transparent"></div>
+                    <div class="absolute top-0 left-8 w-1 h-full bg-red-200 opacity-30"></div>
+                    <div class="absolute top-0 left-0 w-full h-full" style="background-image: repeating-linear-gradient(transparent, transparent 31px, #e5e7eb 31px, #e5e7eb 32px); opacity: 0.3;"></div>
+                    
+                    <div class="relative p-8">
+                        <!-- Letter Header -->
+                        <div class="mb-6 pb-4 border-b-2 border-blue-200">
+                            <div class="flex items-center gap-3 mb-2">
+                                <div class="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center text-white shadow-lg">
+                                    <i class="fa-solid fa-user-graduate text-xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-slate-900">Student Feedback Letter</h3>
+                                    <p class="text-xs text-slate-500">Share your learning journey with us</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <form id="studentFeedbackForm" class="space-y-5">
+                            <input type="hidden" name="type" value="student">
+                            
+                            <!-- Letter Salutation -->
+                            <div class="text-sm text-slate-700 italic mb-4">
+                                Dear MakeSkilled Team,
+                            </div>
+                            
+                            <div class="space-y-4">
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-600 mb-1.5 uppercase tracking-wide">Your Name</label>
+                                    <input class="w-full px-4 py-2.5 border-b-2 border-slate-300 focus:border-blue-500 outline-none bg-transparent transition-colors font-handwriting text-slate-800" name="name" placeholder="Write your name..." required style="font-family: 'Courier New', monospace;">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-600 mb-1.5 uppercase tracking-wide">Email Address</label>
+                                    <input class="w-full px-4 py-2.5 border-b-2 border-slate-300 focus:border-blue-500 outline-none bg-transparent transition-colors font-handwriting text-slate-800" type="email" name="email" placeholder="your.email@example.com" required style="font-family: 'Courier New', monospace;">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-600 mb-1.5 uppercase tracking-wide">College Name (Optional)</label>
+                                    <input class="w-full px-4 py-2.5 border-b-2 border-slate-300 focus:border-blue-500 outline-none bg-transparent transition-colors font-handwriting text-slate-800" name="college" placeholder="Your institution..." style="font-family: 'Courier New', monospace;">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-600 mb-2 uppercase tracking-wide">Rate Your Experience</label>
+                                    <div class="flex gap-3 flex-wrap">
+                                        <label class="flex items-center gap-2 cursor-pointer px-3 py-2 rounded-lg border-2 border-slate-200 hover:border-blue-400 hover:bg-blue-50 transition-all">
+                                            <input type="radio" name="rating" value="5" required class="text-blue-600">
+                                            <span class="text-base">⭐⭐⭐⭐⭐</span>
+                                        </label>
+                                        <label class="flex items-center gap-2 cursor-pointer px-3 py-2 rounded-lg border-2 border-slate-200 hover:border-blue-400 hover:bg-blue-50 transition-all">
+                                            <input type="radio" name="rating" value="4" class="text-blue-600">
+                                            <span class="text-base">⭐⭐⭐⭐</span>
+                                        </label>
+                                        <label class="flex items-center gap-2 cursor-pointer px-3 py-2 rounded-lg border-2 border-slate-200 hover:border-blue-400 hover:bg-blue-50 transition-all">
+                                            <input type="radio" name="rating" value="3" class="text-blue-600">
+                                            <span class="text-base">⭐⭐⭐</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-600 mb-2 uppercase tracking-wide">Your Message</label>
+                                    <textarea class="w-full px-4 py-3 border-2 border-slate-300 focus:border-blue-500 rounded-lg outline-none bg-white/50 transition-colors resize-none font-handwriting text-slate-800" name="message" rows="6" placeholder="I would like to share my experience about the bootcamp..." required style="font-family: 'Courier New', monospace; line-height: 1.8;"></textarea>
+                                </div>
+                            </div>
+                            
+                            <!-- Letter Closing -->
+                            <div class="text-sm text-slate-700 italic mt-4 mb-4">
+                                Sincerely,<br>
+                                <span class="text-xs text-slate-500">[Your signature above]</span>
+                            </div>
+                            
+                            <button class="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-3 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-2" type="submit">
+                                <i class="fa-solid fa-paper-plane"></i>
+                                Send Letter
+                            </button>
+                            <p id="studentFeedbackMsg" class="text-sm text-center"></p>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Faculty Feedback Form -->
+                <div class="relative bg-white rounded-lg shadow-2xl overflow-hidden border-2 border-purple-200 hover:shadow-3xl transition-all">
+                    <!-- Letter Paper Effect -->
+                    <div class="absolute top-0 left-0 w-full h-8 bg-gradient-to-b from-purple-50 to-transparent"></div>
+                    <div class="absolute top-0 left-8 w-1 h-full bg-red-200 opacity-30"></div>
+                    <div class="absolute top-0 left-0 w-full h-full" style="background-image: repeating-linear-gradient(transparent, transparent 31px, #e5e7eb 31px, #e5e7eb 32px); opacity: 0.3;"></div>
+                    
+                    <div class="relative p-8">
+                        <!-- Letter Header -->
+                        <div class="mb-6 pb-4 border-b-2 border-purple-200">
+                            <div class="flex items-center gap-3 mb-2">
+                                <div class="w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center text-white shadow-lg">
+                                    <i class="fa-solid fa-chalkboard-user text-xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-slate-900">Faculty Feedback Letter</h3>
+                                    <p class="text-xs text-slate-500">Share your observations with us</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <form id="facultyFeedbackForm" class="space-y-5">
+                            <input type="hidden" name="type" value="faculty">
+                            
+                            <!-- Letter Salutation -->
+                            <div class="text-sm text-slate-700 italic mb-4">
+                                Dear MakeSkilled Team,
+                            </div>
+                            
+                            <div class="space-y-4">
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-600 mb-1.5 uppercase tracking-wide">Your Name</label>
+                                    <input class="w-full px-4 py-2.5 border-b-2 border-slate-300 focus:border-purple-500 outline-none bg-transparent transition-colors font-handwriting text-slate-800" name="name" placeholder="Write your name..." required style="font-family: 'Courier New', monospace;">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-600 mb-1.5 uppercase tracking-wide">Email Address</label>
+                                    <input class="w-full px-4 py-2.5 border-b-2 border-slate-300 focus:border-purple-500 outline-none bg-transparent transition-colors font-handwriting text-slate-800" type="email" name="email" placeholder="your.email@example.com" required style="font-family: 'Courier New', monospace;">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-600 mb-1.5 uppercase tracking-wide">College Name (Optional)</label>
+                                    <input class="w-full px-4 py-2.5 border-b-2 border-slate-300 focus:border-purple-500 outline-none bg-transparent transition-colors font-handwriting text-slate-800" name="college" placeholder="Your institution..." style="font-family: 'Courier New', monospace;">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-600 mb-2 uppercase tracking-wide">Rate the Program</label>
+                                    <div class="flex gap-3 flex-wrap">
+                                        <label class="flex items-center gap-2 cursor-pointer px-3 py-2 rounded-lg border-2 border-slate-200 hover:border-purple-400 hover:bg-purple-50 transition-all">
+                                            <input type="radio" name="rating" value="5" required class="text-purple-600">
+                                            <span class="text-base">⭐⭐⭐⭐⭐</span>
+                                        </label>
+                                        <label class="flex items-center gap-2 cursor-pointer px-3 py-2 rounded-lg border-2 border-slate-200 hover:border-purple-400 hover:bg-purple-50 transition-all">
+                                            <input type="radio" name="rating" value="4" class="text-purple-600">
+                                            <span class="text-base">⭐⭐⭐⭐</span>
+                                        </label>
+                                        <label class="flex items-center gap-2 cursor-pointer px-3 py-2 rounded-lg border-2 border-slate-200 hover:border-purple-400 hover:bg-purple-50 transition-all">
+                                            <input type="radio" name="rating" value="3" class="text-purple-600">
+                                            <span class="text-base">⭐⭐⭐</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-600 mb-2 uppercase tracking-wide">Your Feedback</label>
+                                    <textarea class="w-full px-4 py-3 border-2 border-slate-300 focus:border-purple-500 rounded-lg outline-none bg-white/50 transition-colors resize-none font-handwriting text-slate-800" name="message" rows="6" placeholder="I would like to share my observations about the bootcamp program..." required style="font-family: 'Courier New', monospace; line-height: 1.8;"></textarea>
+                                </div>
+                            </div>
+                            
+                            <!-- Letter Closing -->
+                            <div class="text-sm text-slate-700 italic mt-4 mb-4">
+                                Best regards,<br>
+                                <span class="text-xs text-slate-500">[Your signature above]</span>
+                            </div>
+                            
+                            <button class="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white py-3 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-2" type="submit">
+                                <i class="fa-solid fa-paper-plane"></i>
+                                Send Letter
+                            </button>
+                            <p id="facultyFeedbackMsg" class="text-sm text-center"></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feedback Results Display -->
+            <div class="mt-16 mb-12">
+                <h3 class="text-2xl font-bold text-center text-slate-900 mb-6">Recent Feedback</h3>
+                <div class="flex gap-2 justify-center mb-6">
+                    <button data-tab="students" class="tab-btn active">Students ({{ student_feedback|length }})</button>
+                    <button data-tab="faculty" class="tab-btn">HOD/Faculty ({{ faculty_feedback|length }})</button>
+                </div>
+                <div class="mt-6">
+                    <!-- Student Feedback Tab -->
+                    <div id="tab-students" class="tab-pane grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {% for fb in student_feedback[-9:] | reverse %}
+                        <div class="bg-white rounded-xl p-6 shadow-lg border-2 border-blue-100 hover:shadow-xl transition-all">
+                            <div class="flex items-start justify-between mb-3">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-full bg-gradient-to-br from-blue-400 to-indigo-500 flex items-center justify-center text-white font-bold text-sm">
+                                        {{ fb.name[0]|upper }}
+                                    </div>
+                                    <div>
+                                        <div class="font-semibold text-slate-900">{{ fb.name }}</div>
+                                        <div class="text-yellow-500 text-sm">{{ '⭐' * fb.rating }}</div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% if fb.college %}
+                            <div class="text-xs text-slate-500 mb-2">
+                                <i class="fa-solid fa-building-columns mr-1"></i>{{ fb.college }}
+                            </div>
+                            {% endif %}
+                            <p class="text-sm text-slate-700 italic leading-relaxed">"{{ fb.message }}"</p>
+                            <div class="mt-3 text-xs text-slate-400">
+                                <i class="fa-solid fa-clock mr-1"></i>{{ fb.createdAt[:10] }}
+                            </div>
+                        </div>
+                        {% else %}
+                        <div class="col-span-full text-center py-12">
+                            <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-blue-100 flex items-center justify-center">
+                                <i class="fa-solid fa-comments text-blue-500 text-2xl"></i>
+                            </div>
+                            <p class="text-slate-500">No student feedback yet. Be the first to share your experience!</p>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    
+                    <!-- Faculty Feedback Tab -->
+                    <div id="tab-faculty" class="tab-pane hidden grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {% for fb in faculty_feedback[-9:] | reverse %}
+                        <div class="bg-white rounded-xl p-6 shadow-lg border-2 border-purple-100 hover:shadow-xl transition-all">
+                            <div class="flex items-start justify-between mb-3">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-full bg-gradient-to-br from-purple-400 to-pink-500 flex items-center justify-center text-white font-bold text-sm">
+                                        {{ fb.name[0]|upper }}
+                                    </div>
+                                    <div>
+                                        <div class="font-semibold text-slate-900">{{ fb.name }}</div>
+                                        <div class="text-yellow-500 text-sm">{{ '⭐' * fb.rating }}</div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% if fb.college %}
+                            <div class="text-xs text-slate-500 mb-2">
+                                <i class="fa-solid fa-building-columns mr-1"></i>{{ fb.college }}
+                            </div>
+                            {% endif %}
+                            <p class="text-sm text-slate-700 italic leading-relaxed">"{{ fb.message }}"</p>
+                            <div class="mt-3 text-xs text-slate-400">
+                                <i class="fa-solid fa-clock mr-1"></i>{{ fb.createdAt[:10] }}
+                            </div>
+                        </div>
+                        {% else %}
+                        <div class="col-span-full text-center py-12">
+                            <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-purple-100 flex items-center justify-center">
+                                <i class="fa-solid fa-comments text-purple-500 text-2xl"></i>
+                            </div>
+                            <p class="text-slate-500">No faculty feedback yet. Be the first to share your observations!</p>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact / Footer -->
+    <section id="contact" class="bg-slate-900 text-slate-200">
+        <div class="max-w-7xl mx-auto px-6 py-14 grid md:grid-cols-3 gap-8">
+            <div>
+                <div class="text-xl font-bold">MakeSkilled</div>
+                <p class="mt-3 text-slate-300">Bootcamp partner for colleges across India.</p>
+            </div>
+            <div>
+                <div class="font-semibold text-white">Contact</div>
+                <ul class="mt-3 space-y-2 text-slate-300">
+                    <li>Email: <a href="mailto:hello@makeskilled.com" class="underline">maddy@makeskilled.com</a></li>
+                    <li>Phone: <a href="tel:+917893015625" class="underline">+91 7893015625</a></li>
+                    <li>Address: 519, Manjeera Commercial, KPHB, Hyderabad - 72</li>
+                </ul>
+            </div>
+            <div>
+                <div class="font-semibold text-white">Follow</div>
+                <div class="mt-3 flex gap-3 text-slate-100">
+                    <a class="social" href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a class="social" href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                    <a class="social" href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-slate-700 py-4 text-center text-slate-400 text-sm">© 2025 Makeskilled Team</div>
+    </section>
+
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/917893015625" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <script src="/static/js/main.js"></script>
+</body>
+</html>
+
+

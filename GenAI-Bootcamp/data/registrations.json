@@ -1,0 +1,29 @@
+[
+  {
+    "collegeName": "RVR JC",
+    "hodName": "RAHIMAN",
+    "email": "shaik.abdulrahiman0718@gmail.com",
+    "phone": "09347997745",
+    "city": "Guntur",
+    "state": "AP",
+    "createdAt": "2025-11-06T12:41:51.509466Z"
+  },
+  {
+    "collegeName": "mlwec",
+    "hodName": "saradhi",
+    "email": "abc@gmail.com",
+    "phone": "1234567890",
+    "city": "guntur",
+    "state": "Ap",
+    "createdAt": "2025-11-06T19:03:46.432722Z"
+  },
+  {
+    "collegeName": "sacet",
+    "hodName": "reddy",
+    "email": "admin@example.com",
+    "phone": "09347997745",
+    "city": "vijayawada",
+    "state": "AP",
+    "createdAt": "2025-11-07T10:09:55.944991Z"
+  }
+]

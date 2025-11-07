@@ -1,0 +1,18 @@
+[
+  {
+    "name": "ABC",
+    "email": "abc@gmail.com",
+    "rating": 5,
+    "message": "Great hands on experience",
+    "college": "MLWEC",
+    "createdAt": "2025-11-06T19:16:35.942982Z"
+  },
+  {
+    "name": "shaik",
+    "email": "shaik.abdulrahiman0718@gmail.com",
+    "rating": 5,
+    "message": "very good",
+    "college": "Brindavan Institute of technology and Science",
+    "createdAt": "2025-11-07T10:15:09.690857Z"
+  }
+]
